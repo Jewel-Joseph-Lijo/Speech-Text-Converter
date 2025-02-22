@@ -1,6 +1,6 @@
 This is a simple Text To Speech Convertor created using react and CSS.The screenshots of the website is
 given below.
 
-![Screenshot 2024-12-18 184505](https://github.com/user-attachments/assets/a1224e74-9d52-444e-a396-21e45241590a)
+![Screenshot 2025-02-22 174041](https://github.com/user-attachments/assets/307d7aac-f3ff-4dd7-8468-b0edb32f57ab)
 
-![Screenshot 2024-12-18 184555](https://github.com/user-attachments/assets/3906aeb4-5cd5-4015-9ceb-45ad80d429c7)
+![Screenshot 2025-02-22 174119](https://github.com/user-attachments/assets/81a72c28-15a5-412a-9bf3-dbb0e13f4420)
