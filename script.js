@@ -18,7 +18,7 @@ const recognizedText = document.getElementById('recognized-text');
 
 let recognition = new webkitSpeechRecognition() 
 recognition.lang = 'en-US';
-recognition.maxResults = 10;
+recognition.maxResults = 30;
 recognition.continuous = true;
 recognition.interimResults = true;
 
