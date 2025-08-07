@@ -1,4 +1,4 @@
-let speech=false;
+let speech;
 // Text-to-Speech
 const textInput = document.getElementById('text-input');
 
@@ -41,7 +41,7 @@ function StartRecognition(){
 // Stop recognition when the user clicks the Stop Recognition button
 function StopRecognition(){
     recognition.stop();
-    speech=false
+    speech=false;
 }
 
 if(speech!=true){
