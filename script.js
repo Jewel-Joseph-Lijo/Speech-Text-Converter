@@ -16,7 +16,7 @@ function Speak(){
 // Speech-to-Text
 const recognizedText = document.getElementById('recognized-text');
 
-let recognition= new window.webkitSpeechRecognition();
+let recognition= new webkitSpeechRecognition();
 recognition.lang = 'en-US'; 
 recognition.maxResults = 30;
 recognition.continuous = true;
