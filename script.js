@@ -17,6 +17,7 @@ function Speak(){
 const recognizedText = document.getElementById('recognized-text');
 
 const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition
+if(SpeechRecognition){
 const recognition = new SpeechRecognition();
 recognition.lang = 'en-US';
 recognition.maxResults = 30;
@@ -27,6 +28,11 @@ recognition.onresult = (event) => {
     const transcript = event.results[0][0].transcript;
     recognizedText.textContent = transcript;
 };
+}
+
+else{
+    recognizedText.textContent = "Error"
+}
 
 // Start recognition when the user clicks the Start Recognition button
 function StartRecognition(){
