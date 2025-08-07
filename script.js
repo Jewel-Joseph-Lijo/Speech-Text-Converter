@@ -4,7 +4,7 @@ const textInput = document.getElementById('text-input');
 function Speak(){
     const text = textInput.value.trim();
     if (text) {
-        const utterance = new SpeechSynthesisUtterance(text) || new SpeechRecognition(text);
+        const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'en-US';
         utterance.volume = 1;
         utterance.rate = 1;
@@ -16,7 +16,7 @@ function Speak(){
 // Speech-to-Text
 const recognizedText = document.getElementById('recognized-text');
 
-let recognition = new webkitSpeechRecognition() 
+let recognition = new webkitSpeechRecognition()  || new SpeechRecognition(text);
 recognition.lang = 'en-US';
 recognition.maxResults = 30;
 recognition.continuous = true;
