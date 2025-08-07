@@ -4,8 +4,8 @@ const textInput = document.getElementById('text-input');
 function Speak(){
     const text = textInput.value.trim();
     if (text) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US';
+        const utterance = new SpeechSynthesisUtterance(text) || new SpeechRecognition(text);
+        utterance.lang = 'en-US'
         utterance.volume = 1;
         utterance.rate = 1;
         utterance.pitch = 1;
