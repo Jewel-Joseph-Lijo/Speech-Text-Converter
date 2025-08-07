@@ -16,23 +16,32 @@ function Speak(){
 // Speech-to-Text
 const recognizedText = document.getElementById('recognized-text');
 
-let recognition= new webkitSpeechRecognition();
-recognition.lang = 'en-US'; 
-recognition.maxResults = 30;
-recognition.continuous = true;
-recognition.interimResults = true;
+if ('webkitSpeechRecognition' in window) {
+    let recognition= new webkitSpeechRecognition();
+    recognition.lang = 'en-US'; 
+    recognition.maxResults = 30;
+    recognition.continuous = true;
+    recognition.interimResults = true;
 
-recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    recognizedText.textContent = transcript;
-};
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        recognizedText.textContent = transcript;
+    };
 
-// Start recognition when the user clicks the Start Recognition button
-function StartRecognition(){
-    recognition.start();
-}
+    recognition.onerror = (event) => {
+        alert("Error: " + event.error);
+    };
 
-// Stop recognition when the user clicks the Stop Recognition button
-function StopRecognition(){
+    // Start recognition when the user clicks the Start Recognition button
+    function StartRecognition(){
+        recognition.start();
+    }
+
+    // Stop recognition when the user clicks the Stop Recognition button
+    function StopRecognition(){
         recognition.stop();
+    }
+}
+else {
+    alert("Speech recognition not supported in this browser.");
 }
