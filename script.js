@@ -1,3 +1,4 @@
+let speech=false;
 // Text-to-Speech
 const textInput = document.getElementById('text-input');
 
@@ -34,9 +35,15 @@ recognition.onerror = (event) => {
 // Start recognition when the user clicks the Start Recognition button
 function StartRecognition(){
     recognition.start();
+    speech=true;
 }
 
 // Stop recognition when the user clicks the Stop Recognition button
 function StopRecognition(){
     recognition.stop();
+    speech=false
+}
+
+if(speech!=true){
+    alert("Speech recognition not supported in this browser.");
 }
